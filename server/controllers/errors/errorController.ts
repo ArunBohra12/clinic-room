@@ -53,9 +53,9 @@ const sendErrorProd = (err: Error | AppError, res: Response) => {
 
 const globalErrorMiddleware = (err: AppError | Error, req: Request, res: Response) => {
   if (process.env.NODE_ENV === 'production') {
-    sendErrorDev(err, res);
-  } else {
     sendErrorProd(err, res);
+  } else {
+    sendErrorDev(err, res);
   }
 };
 
